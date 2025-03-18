@@ -1,1 +1,98 @@
 
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container */
+.container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Section Styles */
+section {
+  padding: 20px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  position: relative;
+  background-color: #f2f2f2; /* Background color for sections */
+}
+
+/* Section Titles */
+section .section-title {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #333; /* Background color for section title */
+  color: white;
+  padding: 5px 10px;
+  font-size: 1.25em;
+}
+
+/* Dummy Text */
+section p {
+  margin-top: 30px; /* Push the text down to prevent overlap */
+  font-size: 1em;
+}
+
+/* Desktop View (992px and above) */
+@media (min-width: 992px) {
+  .container {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  section {
+    width: 32%; /* Each section takes up 1/3 of the width */
+    margin-right: 2%; /* Spacing between sections */
+  }
+
+  section:last-child {
+    margin-right: 0; /* No margin on the last section */
+  }
+}
+
+/* Tablet View (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  section {
+    width: 48%; /* Each section takes up almost half of the width */
+    margin-right: 2%;
+  }
+
+  section:last-child {
+    width: 100%; /* The last section takes up the full width */
+    margin-right: 0;
+  }
+}
+
+/* Mobile View (767px and below) */
+@media (max-width: 767px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  section {
+    width: 100%; /* Each section takes up the full width */
+    margin-bottom: 10px; /* Space between sections */
+  }
+}
